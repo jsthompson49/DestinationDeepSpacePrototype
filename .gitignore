@@ -1,0 +1,9 @@
+/out
+/dist
+/.gradle
+/.idea
+/build
+/gradle
+gradlew
+gradlew.bat
+2019-Destination-Deep-Space.iml
