@@ -54,7 +54,7 @@ public class MessageServer {
             messageCount++;
             message = messageEntry.getString("");
             sender = messageSenderEntry.getString("");
-            System.out.println(String.format("%s messages, current mesage from %s: %s", sender, message));
+            System.out.println(String.format("%s messages, current mesage from %s: %s", messageCount, sender, message));
 
             messageCountEntry.setNumber(messageCount);
             messageEntry.setString("ACK");

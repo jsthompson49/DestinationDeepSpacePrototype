@@ -7,6 +7,7 @@
 
 package main.java.frc.robot;
 
+import edu.wpi.cscore.MjpegServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -43,6 +44,8 @@ public class Robot extends TimedRobot
 
     private MessageServer messageServer = new MessageServer("MessageServer");
 
+    private MjpegServer videoServer;
+
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -63,6 +66,9 @@ public class Robot extends TimedRobot
         camera2.setResolution(480, 360);
         camera.setFPS(10);
         camera2.setFPS(15);
+
+        videoServer = new MjpegServer("video_out", 1182);
+        videoServer.setSource(camera);
     }
 
     @Override
