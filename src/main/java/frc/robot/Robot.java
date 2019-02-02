@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.subsystems.PixyCam;
 import main.java.frc.robot.commands.DefaultAuto;
 import main.java.frc.robot.subsystems.DriveBase;
 import main.java.frc.robot.subsystems.GyroSub;
@@ -45,6 +46,8 @@ public class Robot extends TimedRobot
     private MessageServer messageServer = new MessageServer("MessageServer");
 
     private MjpegServer videoServer;
+
+    private PixyCam pixyCam = new PixyCam();
 
     /**
      * This function is run when the robot is first started up and should be
@@ -162,6 +165,7 @@ public class Robot extends TimedRobot
 
     public void testInit(){
         Robot.gyro.gyroCalibrate();
+        pixyCam.requestVersion();
     }
     /**
      * This function is called periodically during test mode.
